@@ -39,6 +39,5 @@ int	main(void)
 		printf("The results match!✅\n");
 	else
 		printf("The results don't match!❌\n");
-	printf("----------------------------\n");
 }
 */
