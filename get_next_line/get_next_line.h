@@ -6,7 +6,7 @@
 /*   By: tborges- <tborges-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/25 16:56:36 by tborges-          #+#    #+#             */
-/*   Updated: 2024/08/22 10:47:07 by tborges-         ###   ########.fr       */
+/*   Updated: 2024/11/19 14:37:09 by tborges-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #  define BUFFER_SIZE 10
 # endif
 
+# include "../libft.h"
 # include <stdlib.h>
 # include <unistd.h>
 
@@ -27,8 +28,8 @@ char	*get_line(char *line);
 char	*new_line(char *line);
 
 // utils
-size_t	ft_strlen(char *s);
-char	*ft_strchr(char *s, int c);
-char	*ft_strjoin(char *line, char *buff);
+// size_t	ft_strlen(char *s);
+// char	*ft_strchr(char *s, int c);
+// char	*ft_strjoin(char *line, char *buff);
 
 #endif
