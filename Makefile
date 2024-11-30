@@ -4,9 +4,9 @@
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: tborges- <tborges-@student.42.fr>          +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
+#                                                 +#+#+#+#+#+   +#+           #
 #    Created: 2024/04/02 20:18:54 by tborges-          #+#    #+#              #
-#    Updated: 2024/11/19 14:36:17 by tborges-         ###   ########.fr        #
+#    Updated: 2024/11/30 12:35:00 by tborges-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,15 +26,14 @@ SRCS	= ft_isascii.c ft_isprint.c ft_isalpha.c ft_isdigit.c ft_isalnum.c \
 OBJS	= $(SRCS:.c=.o)
 
 FT_PRINTF_DIR = ft_printf
-FT_PRINTF_LIB = $(FT_PRINTF_DIR)/libftprintf.a
+FT_PRINTF_OBJS = $(FT_PRINTF_DIR)/*.o
 
 all:		$(NAME)
 
-$(NAME):	$(OBJS) $(FT_PRINTF_LIB)
+$(NAME):	$(OBJS)
 			ar -rcs $(NAME) $(OBJS)
-
-$(FT_PRINTF_LIB):
 			$(MAKE) -C $(FT_PRINTF_DIR)
+			ar -rcs $(NAME) $(FT_PRINTF_OBJS)
 
 clean:
 			rm -f $(OBJS)
