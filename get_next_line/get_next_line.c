@@ -6,7 +6,7 @@
 /*   By: tborges- <tborges-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/25 16:57:00 by tborges-          #+#    #+#             */
-/*   Updated: 2024/08/22 11:56:05 by tborges-         ###   ########.fr       */
+/*   Updated: 2024/12/04 10:00:11 by tborges-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ char	*read_line(int fd, char *line)
 	if (!buffer)
 		return (NULL);
 	bytes_read = 1;
-	while (!ft_strchr(buffer, '\n') && bytes_read > 0)
+	while (!ft_strchr_gnl(line, '\n') && bytes_read > 0)
 	{
 		bytes_read = read(fd, buffer, BUFFER_SIZE);
 		if (bytes_read == -1)
@@ -35,7 +35,7 @@ char	*read_line(int fd, char *line)
 			return (NULL);
 		}
 		buffer[bytes_read] = '\0';
-		line = ft_strjoin(line, buffer);
+		line = ft_strjoin_gnl(line, buffer);
 	}
 	free(buffer);
 	return (line);
@@ -59,16 +59,11 @@ char	*get_line(char *line)
 		return (NULL);
 	while (line[i] && line[i] != '\n')
 		i++;
-	str = (char *)malloc(i + 2);
+	str = (char *)malloc(i + 1);
 	if (!str)
 		return (NULL);
 	i = 0;
 	while (line[i] && line[i] != '\n')
-	{
-		str[i] = line[i];
-		i++;
-	}
-	if (line[i] == '\n')
 	{
 		str[i] = line[i];
 		i++;
@@ -96,7 +91,7 @@ char	*new_line(char *line)
 		free(line);
 		return (NULL);
 	}
-	str = (char *)malloc(sizeof(char) * ft_strlen(line) - i + 1);
+	str = (char *)malloc(sizeof(char) * ft_strlen_gnl(line) - i + 1);
 	if (!str)
 		return (NULL);
 	i++;
