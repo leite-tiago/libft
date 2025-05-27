@@ -1,5 +1,5 @@
 
-# Libft
+# 📚 Libft
 
 **Libft** is a custom C library designed for use in academic projects at 42. This library includes a variety of useful functions, such as reimplementations of `libc` functions, additional utilities, and integrated versions of **get_next_line** and **ft_printf**.
 
