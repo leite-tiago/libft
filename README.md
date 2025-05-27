@@ -10,7 +10,7 @@ This repository is fully integrated and compiles everything seamlessly. By inclu
 To get started, clone this repository and navigate to its directory:
 
 ```bash
-git clone <repository_url>
+git clone https://github.com/leite-tiago/libft.git>
 cd libft
 ```
 
